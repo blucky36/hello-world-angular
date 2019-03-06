@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../data.service.ts"
+import {DataService} from "../data.service"
 
 @Component({
   selector: 'app-home',
@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit {
       console.log(this.users)
     })
   }
-  
+
   firstClick(){
     this.h1Style = !this.h1Style
   }
