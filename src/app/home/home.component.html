@@ -1,3 +1,45 @@
-<p>
-  home works!
-</p>
+<div class="container-fluid">
+  <table *ngIf="users" class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Company</th>
+        <th scope="col">Address</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Photo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.name.split(" ")[0]}}</td>
+        <td>{{user.name.split(" ")[1]}}</td>
+        <td>{{user.company}}</td>
+        <td>{{user.address}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td><img [src]="user.photo_url" alt=""/></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ul *ngIf="users">
+    <li *ngFor="let user of users">{{user.name}}</li>
+  </ul>
+
+  <ul>
+    <li>[class.gray]</li>
+    <li [class.gray]="h1Style">dependent on boolean styles with class.css-name</li>
+    <li>[ngClass]</li>
+    <li [ngClass]="{ 'gray':h1Style, 'large':!h1Style }">Inline ng styles from css with ngClass</li>
+    <li>[style.color]</li>
+    <li [style.color]="h1Style ? 'blue' : 'black'">more inline style with style.css-name</li>
+    <li>[ngStyle]</li>
+    <li [ngStyle]="{'color':h1Style ? 'green' : 'red', 'font-size':!h1Style ? '1em' : '2em'}">multiple inline styles with ngStyle</li>
+  </ul>
+
+  <button (click)="firstClick()">Toggle Button</button>
+</div>
