@@ -7,16 +7,16 @@
       Name:
       <input type="text" formControlName="name" placeholder="input name">
       <div *ngIf="submitted && messageForm.controls.name.errors" class="error">
-        <div ngIf="messageForm.controls.name.errors.required">
+        <div *ngIf="messageForm.controls.name.errors.required">
           Your Name is required to submit
         </div>
       </div>
     </label>
     <label>
       Message:
-      <textarea formControlMessage="message" placeholder="send me a message"></textarea>
+      <textarea formControlName="message" placeholder="send me a message"></textarea>
       <div *ngIf="submitted && messageForm.controls.message.errors" class="error">
-        <div ngIf="messageForm.controls.message.errors.required">
+        <div *ngIf="messageForm.controls.message.errors.required">
           A Message is requried to submit
         </div>
       </div>
